@@ -114,43 +114,111 @@
         <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[--bg-base] to-transparent z-20"></div>
     </section>
 
-    <!-- VALUES -->
-    <section class="py-24 bg-white">
+    <!-- DETAILED ABOUT & TEAM SECTION -->
+    <section class="py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <h2 class="text-3xl text-[--primary] font-display font-medium mb-4">¿Por qué elegirnos?</h2>
-                <p class="text-slate-600">Más que dermatología clínica; somos tu paso hacia un bienestar profundo.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="bg-[--bg-base] p-10 rounded-3xl reveal flex gap-6">
-                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0">
-                        <i data-lucide="heart" class="w-6 h-6 text-[--accent]"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-display font-medium text-[--primary] mb-3">Atención empática</h3>
-                        <p class="text-slate-600">Entendemos cómo las condiciones de la piel afectan tu autoestima y tu vida díaria. Te guiamos sin juzgarte, diseñando tratamientos adaptados a tu realidad.</p>
-                    </div>
-                </div>
-
-                <div class="bg-[--bg-base] p-10 rounded-3xl reveal flex gap-6">
-                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0">
-                        <i data-lucide="award" class="w-6 h-6 text-[--secondary]"></i>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-display font-medium text-[--primary] mb-3">Expertos calificados</h3>
-                        <p class="text-slate-600">No dejamos tu salud al azar. Todo nuestro equipo clínico está conformado por especialistas con años de entrenamiento idóneo probados en dermatología médica.</p>
-                    </div>
-                </div>
-            </div>
             
-            <div class="mt-16 bg-[--primary] rounded-3xl p-10 md:p-16 text-center text-white reveal shadow-[--shadow-multi]">
-                <h2 class="text-3xl font-display mb-6">¿Preparado para tu primera visita?</h2>
-                <p class="max-w-xl mx-auto text-slate-300 mb-8">Sabemos que encontrar el dermatólogo correcto es difícil. Danos la oportunidad de evaluar tu caso y te brindaremos un diagnóstico honesto y resolutivo.</p>
-                <a href="https://wa.me/50768608060" class="inline-flex bg-[--accent] text-white px-8 py-4 rounded-full font-medium hover:opacity-90">
-                    Conversar con el especialista
-                </a>
+            <!-- Intro: Quienes Somos -->
+            <div class="flex flex-col md:flex-row items-center gap-16 mb-32 reveal">
+                <div class="w-full md:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-[--accent]/10 rounded-full blur-2xl"></div>
+                    <img src="assets/img/equipo_actual.jpg" alt="Equipo DermaMedic" class="rounded-[40px] shadow-2xl relative z-10 w-full object-cover">
+                    <div class="absolute -bottom-8 -right-8 w-64 h-64 border-2 border-[--accent]/20 rounded-[40px] -z-0 hidden md:block"></div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <span class="text-xs font-bold text-[--accent] tracking-[0.3em] uppercase mb-4 block">Nuestra Identidad</span>
+                    <h2 class="text-3xl md:text-5xl text-[--primary] font-display font-medium mb-8">¿Quiénes somos?</h2>
+                    <div class="space-y-6 text-slate-600 leading-relaxed text-lg">
+                        <p>
+                            Ubicada en <span class="text-[--primary] font-medium">La Chorrera, Panamá Oeste</span>, nuestra clínica cuenta con expertos en dermatología y alergología, dedicados a cuidar la salud y bienestar de tu piel.
+                        </p>
+                        <p>
+                            Nuestro propósito es brindar atención dermatológica de <span class="text-[--primary] font-medium">excelencia</span>, combinando tecnología avanzada y la experiencia de nuestro equipo médico altamente calificado.
+                        </p>
+                        <div class="pt-6 flex flex-wrap gap-4">
+                            <a href="https://wa.me/50768608060" class="inline-flex items-center gap-2 bg-[--primary] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-slate-800 transition-all">
+                                <i data-lucide="phone" class="w-4 h-4"></i> WhatsApp al Dermatólogo
+                            </a>
+                            <a href="tel:3455528" class="inline-flex items-center gap-2 border border-slate-200 text-slate-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-slate-50 transition-all">
+                                <i data-lucide="phone-call" class="w-4 h-4"></i> Llama ahora
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- Meet the Doctors Grid -->
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl text-[--primary] font-display font-medium mb-6">Conoce a nuestros médicos</h2>
+                <p class="text-slate-500 max-w-3xl mx-auto leading-relaxed">
+                    Nuestro destacado equipo de médicos dermatólogos y alergólogos, profesionales altamente calificados y con amplia trayectoria clínica en Panamá e internacionalmente.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal">
+                
+                <!-- Doctor 1: Dra. Elena -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-[32px] bg-slate-100 aspect-[4/5] mb-6">
+                        <img src="https://dermamedicpanama.com/wp-content/uploads/2023/12/dra-elena-natalie-1024x1024.webp" alt="Dra. Elena Natalie Pérez" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <p class="text-white text-[10px] font-bold uppercase tracking-widest mb-1">Dermatología Clínica / Estética</p>
+                            <h3 class="text-white text-xl font-display">Dra. Elena Natalie Pérez</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                        Graduada con honores en la Universidad de Panamá. Especialista del Complejo Hospitalario Dr. Arnulfo Arias Madrid con rotaciones en el Hospital La Paz, Madrid.
+                    </p>
+                </div>
+
+                <!-- Doctor 2: Dr. Freddy -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-[32px] bg-slate-100 aspect-[4/5] mb-6">
+                        <img src="https://dermamedicpanama.com/wp-content/uploads/2023/12/dr-freddy-diaz-1024x1024.webp" alt="Dr. Freddy Díaz" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <p class="text-white text-[10px] font-bold uppercase tracking-widest mb-1">Dermatología Oncológica</p>
+                            <h3 class="text-white text-xl font-display">Dr. Freddy Díaz</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                        Especialista en oncología cutánea en el Instituto Oncológico de Panamá. Profesor universitario y experto en tratamiento de lesiones malignas de piel.
+                    </p>
+                </div>
+
+                <!-- Doctor 3: Dr. David -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-[32px] bg-slate-100 aspect-[4/5] mb-6">
+                        <img src="https://dermamedicpanama.com/wp-content/uploads/2023/12/dr-david-bosquez-1024x1024.webp" alt="Dr. David Bósquez" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <p class="text-white text-[10px] font-bold uppercase tracking-widest mb-1">Dermatología Pediátrica</p>
+                            <h3 class="text-white text-xl font-display">Dr. David Bósquez</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                        Subespecialista en Dermatología Pediátrica del Hospital Sant Joan de Déu, Barcelona. Enfocado en el cuidado suave de la piel de los más pequeños.
+                    </p>
+                </div>
+
+                <!-- Doctor 4: Dra. Laura -->
+                <div class="group">
+                    <div class="relative overflow-hidden rounded-[32px] bg-slate-100 aspect-[4/5] mb-6">
+                        <img src="https://dermamedicpanama.com/wp-content/uploads/2023/12/Post-presentacion-Dra-Elena.-2-2-1024x1024.webp" alt="Dra. Laura Abrego" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <p class="text-white text-[10px] font-bold uppercase tracking-widest mb-1">Alergología e Inmunología</p>
+                            <h3 class="text-white text-xl font-display">Dra. Laura Abrego</h3>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed line-clamp-4">
+                        Subespecialista del Hospital for Sick Children y la Universidad de Toronto. Experta en inmunología clínica, rinitis y alergias complejas.
+                    </p>
+                </div>
+
+            </div>
+
         </div>
     </section>
 
