@@ -195,6 +195,40 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
         .wa-float { animation: pulse-wa 2s infinite; }
+
+        /* Stats Section Orbs */
+        @keyframes floatOrb1 {
+            0%,100% { transform: translate(0,0) scale(1); }
+            33%     { transform: translate(24px,-18px) scale(1.06); }
+            66%     { transform: translate(-12px,12px) scale(0.94); }
+        }
+        @keyframes floatOrb2 {
+            0%,100% { transform: translate(0,0) scale(1); }
+            50%     { transform: translate(-22px,16px) scale(1.09); }
+        }
+        @keyframes floatOrb3 {
+            0%,100% { transform: translate(0,0); }
+            40%     { transform: translate(16px,-10px); }
+            80%     { transform: translate(-8px,14px); }
+        }
+        /* Shimmer sweep on stat cards */
+        @keyframes shimmerSweep {
+            0%   { transform: translateX(-100%) skewX(-12deg); }
+            100% { transform: translateX(300%) skewX(-12deg); }
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.07) 50%, transparent 100%);
+            transform: translateX(-100%) skewX(-12deg);
+            border-radius: inherit;
+            transition: none;
+            pointer-events: none;
+        }
+        .stat-card:hover::before { animation: shimmerSweep 0.7s ease-out forwards; }
+
+        /* Stat number glow */
+        .stat-num-accent { text-shadow: 0 0 30px rgba(153,132,158,0.5); }
     </style>
 </head>
 <body>
@@ -320,24 +354,84 @@
         </div>
     </section>
 
-    <!-- TRUST BAR -->
-    <section class="bg-primary text-white py-12 md:py-16 relative z-20 -mt-8 rounded-t-3xl sm:-mt-0 sm:rounded-none">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center divide-x-0 md:divide-x divide-white/20">
-            <div class="reveal">
-                <p class="font-display text-4xl md:text-5xl font-semibold mb-2 text-accent">3+</p>
-                <p class="text-xs md:text-sm uppercase tracking-wider opacity-80">Especialidades</p>
-            </div>
-            <div class="reveal delay-[100ms]">
-                <p class="font-display text-4xl md:text-5xl font-semibold mb-2">100%</p>
-                <p class="text-xs md:text-sm uppercase tracking-wider opacity-80">Médicos Idóneos</p>
-            </div>
-            <div class="reveal delay-[200ms]">
-                <p class="font-display text-4xl md:text-5xl font-semibold mb-2 text-accent">0</p>
-                <p class="text-xs md:text-sm uppercase tracking-wider opacity-80">Listas de Espera</p>
-            </div>
-            <div class="reveal delay-[300ms]">
-                <p class="font-display text-4xl md:text-5xl font-semibold mb-2">Pty</p>
-                <p class="text-xs md:text-sm uppercase tracking-wider opacity-80">Uniplaza Chorrera</p>
+    <!-- TRUST BAR — REDESIGNED -->
+    <section class="relative py-20 overflow-hidden z-20 -mt-8 rounded-t-[2rem] sm:-mt-0 sm:rounded-none">
+
+        <!-- Rich gradient background -->
+        <div class="absolute inset-0 bg-gradient-to-br from-[#2E2433] via-[#5A4B5E] to-[#3D2E42]"></div>
+
+        <!-- Subtle dot grid texture -->
+        <div class="absolute inset-0 opacity-[0.04]"
+             style="background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 28px 28px;"></div>
+
+        <!-- Animated floating orbs -->
+        <div class="absolute -top-12 -left-12 w-72 h-72 bg-accent/15 rounded-full blur-3xl pointer-events-none"
+             style="animation: floatOrb1 9s ease-in-out infinite;"></div>
+        <div class="absolute -bottom-12 -right-12 w-56 h-56 bg-white/5 rounded-full blur-3xl pointer-events-none"
+             style="animation: floatOrb2 7s ease-in-out infinite;"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-24 bg-accent/5 rounded-full blur-3xl pointer-events-none"
+             style="animation: floatOrb3 11s ease-in-out infinite;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+
+                <!-- Stat 1: Especialidades -->
+                <div class="stat-card reveal relative bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 text-center overflow-hidden
+                            hover:bg-white/10 hover:border-white/20 hover:-translate-y-1.5 transition-all duration-500 group">
+                    <div class="absolute inset-0 rounded-3xl bg-accent/0 group-hover:bg-accent/5 transition-all duration-500"></div>
+                    <!-- Icon -->
+                    <div class="w-11 h-11 mx-auto mb-5 rounded-2xl bg-accent/20 border border-accent/20 flex items-center justify-center relative z-10
+                                group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="layers" class="w-5 h-5 text-accent"></i>
+                    </div>
+                    <!-- Counter -->
+                    <p class="stat-num-accent font-display text-5xl md:text-6xl font-bold text-white mb-2 relative z-10 counter"
+                       data-target="3" data-suffix="+">0</p>
+                    <p class="text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/45 font-semibold relative z-10">Especialidades</p>
+                    <!-- Bottom slide line -->
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 group-hover:w-12 bg-accent rounded-full transition-all duration-500"></div>
+                </div>
+
+                <!-- Stat 2: Médicos Idóneos -->
+                <div class="stat-card reveal relative bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 text-center overflow-hidden
+                            hover:bg-white/10 hover:border-white/20 hover:-translate-y-1.5 transition-all duration-500 group" style="transition-delay:80ms;">
+                    <div class="absolute inset-0 rounded-3xl bg-white/0 group-hover:bg-white/5 transition-all duration-500"></div>
+                    <div class="w-11 h-11 mx-auto mb-5 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center relative z-10
+                                group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <p class="font-display text-5xl md:text-6xl font-bold text-white mb-2 relative z-10 counter"
+                       data-target="100" data-suffix="%">0</p>
+                    <p class="text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/45 font-semibold relative z-10">Médicos Idóneos</p>
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 group-hover:w-12 bg-white/60 rounded-full transition-all duration-500"></div>
+                </div>
+
+                <!-- Stat 3: Listas de Espera -->
+                <div class="stat-card reveal relative bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 text-center overflow-hidden
+                            hover:bg-white/10 hover:border-white/20 hover:-translate-y-1.5 transition-all duration-500 group" style="transition-delay:160ms;">
+                    <div class="absolute inset-0 rounded-3xl bg-accent/0 group-hover:bg-accent/5 transition-all duration-500"></div>
+                    <div class="w-11 h-11 mx-auto mb-5 rounded-2xl bg-accent/20 border border-accent/20 flex items-center justify-center relative z-10
+                                group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="clock" class="w-5 h-5 text-accent"></i>
+                    </div>
+                    <p class="stat-num-accent font-display text-5xl md:text-6xl font-bold text-white mb-2 relative z-10">Cero</p>
+                    <p class="text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/45 font-semibold relative z-10">Listas de Espera</p>
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 group-hover:w-12 bg-accent rounded-full transition-all duration-500"></div>
+                </div>
+
+                <!-- Stat 4: Uniplaza Chorrera -->
+                <div class="stat-card reveal relative bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-6 md:p-8 text-center overflow-hidden
+                            hover:bg-white/10 hover:border-white/20 hover:-translate-y-1.5 transition-all duration-500 group" style="transition-delay:240ms;">
+                    <div class="absolute inset-0 rounded-3xl bg-white/0 group-hover:bg-white/5 transition-all duration-500"></div>
+                    <div class="w-11 h-11 mx-auto mb-5 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center relative z-10
+                                group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <p class="font-display text-5xl md:text-6xl font-bold text-white mb-2 relative z-10">Pty</p>
+                    <p class="text-[10px] md:text-xs uppercase tracking-[0.22em] text-white/45 font-semibold relative z-10">Uniplaza Chorrera</p>
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-0 group-hover:w-12 bg-white/60 rounded-full transition-all duration-500"></div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -698,6 +792,32 @@
         }, observerOptions);
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Counter animation (triggered by IntersectionObserver)
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const target = parseInt(el.dataset.target);
+                const suffix = el.dataset.suffix || '';
+                if (target === 0) return; // static "0" values skip animation
+                const duration = 1400;
+                const steps = 55;
+                const stepTime = duration / steps;
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += target / steps;
+                    if (current >= target) {
+                        el.textContent = target + suffix;
+                        clearInterval(timer);
+                    } else {
+                        el.textContent = Math.floor(current) + suffix;
+                    }
+                }, stepTime);
+                counterObserver.unobserve(el);
+            });
+        }, { threshold: 0.6 });
+        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
     </script>
 </body>
 </html>
