@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <title>Servicios Dermatológicos en Chorrera | DermaMedic Panamá</title>
+    <meta name="description" content="Especialistas en clínica, pediátrica, quirúrgica y estética. Consulta tus dudas y recupera la salud de tu piel en Panamá Oeste sin largas esperas.">
+    <link rel="canonical" href="https://dermamedicpanama.com/servicios/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Servicios Dermatológicos en Chorrera | DermaMedic Panamá">
+    <meta property="og:description" content="Especialistas en Dermatología Clínica, Quirúrgica, Pediátrica y Estética en La Chorrera.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿A partir de qué edad pueden atender a mi hijo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atendemos a niños de todas las edades, desde recién nacidos con condiciones genéticas o dermatológicas hasta adolescentes con problemas de acné, gracias a nuestra especialidad en Dermatología Pediátrica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se necesita referencia médica para agendar cita?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, no se necesita referencia médica. Puedes agendar directamente con nosotros vía WhatsApp o teléfono."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto toma recuperarse de un procedimiento quirúrgico de piel?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende del procedimiento (como retiro de quistes o lunares), pero utilizamos tecnología avanzada y equipos modernos para reducir los tiempos, permitiendo usualmente regresar a actividades ligeras casi de inmediato."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "DermaMedic Panamá",
+      "url": "https://dermamedicpanama.com/",
+      "telephone": "+5073455528",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Uniplaza, Costa Verde, Local B-17",
+        "addressLocality": "La Chorrera",
+        "addressCountry": "PA"
+      }
+    }
+    </script>
+
+    <!-- Preload Hero Image -->
+    <link rel="preload" as="image" href="assets/img/hero_bg.png">
+
+    <style>
+        :root {
+            --primary: #635F6A;
+            --secondary: #90A98F;
+            --accent: #E0916D;
+            --bg-base: #F8FAFC;
+            --text-dark: #0F172A;
+            --text-muted: #475569;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-multi: rgba(14,63,126,0.04) 0px 0px 0px 1px, rgba(42,51,69,0.04) 0px 1px 1px -0.5px, rgba(42,51,70,0.04) 0px 3px 3px -1.5px, rgba(42,51,70,0.04) 0px 6px 6px -3px, rgba(14,63,126,0.04) 0px 12px 12px -6px, rgba(14,63,126,0.04) 0px 24px 24px -12px;
+        }
+
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-base); -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, h4, .font-display { font-family: var(--font-display); }
+
+        .shadow-multi { box-shadow: var(--shadow-multi); }
+        .text-primary { color: var(--primary); }
+        .bg-primary { background-color: var(--primary); }
+        .text-secondary { color: var(--secondary); }
+        .bg-secondary { background-color: var(--secondary); }
+        .bg-accent { background-color: var(--accent); }
+        .text-accent { color: var(--accent); }
+
+        /* Component Utils */
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255,255,255,0.65);
+            border: 1px solid rgba(255,255,255,0.35);
+            transition: background 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+        }
+        .glass-nav.scrolled {
+            background: rgba(255,255,255,0.94);
+            border: 1px solid rgba(227,184,129,0.25);
+        }
+        
+        @keyframes pulse-wa {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .wa-float { animation: pulse-wa 2s infinite; }
+
+        @keyframes blurIn {
+            from { filter:blur(12px); opacity:0; transform:translateY(8px); }
+            to   { filter:blur(0); opacity:1; transform:translateY(0); }
+        }
+        .blur-in-1 { opacity:0; animation: blurIn 0.8s ease-out 0.2s forwards; }
+        .blur-in-2 { opacity:0; animation: blurIn 0.8s ease-out 0.4s forwards; }
+        .blur-in-3 { opacity:0; animation: blurIn 0.8s ease-out 0.6s forwards; }
+
+        .reveal { 
+            opacity:0; transform: translateY(20px) scale(0.97);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out; 
+        }
+        .revealed { opacity:1; transform: translateY(0) scale(1); }
+
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed z-50 h-[72px] glass-nav left-1/2 -translate-x-1/2 shadow-xl" style="top: 1rem; width: 94%; max-width: 80rem; border-radius: 9999px;">
+        <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+            <a href="index.html" class="flex items-center h-full py-1.5 transition-opacity hover:opacity-80">
+                <img src="assets/img/logo_transparent.png" alt="DermaMedic" class="h-full w-auto max-w-[200px] object-contain">
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-[15px] font-medium text-slate-700">
+                <a href="index.html" class="hover:text-primary transition-colors">Inicio</a>
+                <a href="servicios.html" class="text-primary font-semibold transition-colors">Servicios</a>
+                <a href="nosotros.html" class="hover:text-primary transition-colors">Nosotros</a>
+                <a href="contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:3455528" class="text-sm font-medium text-slate-600 hover:text-primary flex items-center gap-2 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i>345-5528
+                </a>
+                <a href="https://wa.me/50768608060?text=Hola,%20quisiera%20agendar" target="_blank" class="bg-accent text-white px-5 py-2.5 rounded-full font-medium text-sm flex items-center gap-2 hover:opacity-90 transition-all shadow-multi hover:-translate-y-0.5">
+                    Agenda Hoy
+                </a>
+            </div>
+
+            <div class="md:hidden flex items-center gap-2">
+                <a href="https://wa.me/50768608060?text=Hola,%20quisiera%20agendar%20una%20cita." target="_blank" class="bg-accent text-white px-3.5 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                    Cita
+                </a>
+                <button class="text-primary p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white pt-[72px] px-6">
+        <div class="flex flex-col gap-6 py-8 text-xl font-display">
+            <a href="index.html" class="text-slate-700">Inicio</a>
+            <a href="servicios.html" class="text-primary">Servicios</a>
+            <a href="nosotros.html" class="text-slate-700">Nosotros</a>
+            <a href="contacto.html" class="text-slate-700">Contacto</a>
+        </div>
+    </div>
+
+    <!-- HERO SERVICIOS -->
+    <section class="relative min-h-[50vh] flex items-center pt-20 bg-primary overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/img/hero_bg.png" alt="Consultorio clínico dermatológico con tecnología" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-r from-primary to-transparent md:to-primary/60"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full text-center py-20">
+            <h1 class="blur-in-1 text-4xl md:text-5xl lg:text-6xl text-white font-display font-medium mb-6">
+                Especialidades <span class="text-accent italic">Dermatológicas</span>
+            </h1>
+            <p class="blur-in-2 text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed font-light">
+                Brindamos atención personalizada con médicos idóneos en Panamá Oeste. Tu cuidado no se delega; diagnosticamos y tratamos con excelencia científica e integridad humana.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE SERVICIOS - BENTO MODERN GRID -->
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="text-center mb-16 reveal">
+            <span class="text-xs font-bold text-accent tracking-[0.3em] uppercase mb-4 block">Especialidades</span>
+            <h2 class="text-3xl md:text-5xl text-primary font-display font-medium mb-6">Nuestra Experiencia a tu Alcance</h2>
+            <p class="text-slate-600 max-w-3xl mx-auto leading-relaxed text-sm md:text-base">
+                Combinamos ciencia médica, tecnología avanzada y un trato humano excepcional para ofrecerte soluciones definitivas en el cuidado de tu piel.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-8 auto-rows-[280px] md:auto-rows-[320px]">
+            
+            <!-- 1. Dermatología Clínica (Grande - Esquina Superior Izquierda) -->
+            <div class="md:col-span-8 md:row-span-2 group relative overflow-hidden rounded-[40px] shadow-lg reveal">
+                <img src="assets/img/derma_clinica.png" alt="Dermatología Clínica" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+                    <h3 class="text-2xl md:text-3xl font-display text-white mb-4">Dermatología Clínica</h3>
+                    <div class="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
+                        <span class="flex items-center gap-2 text-white/80 text-xs md:text-sm"><i data-lucide="circle" class="w-2 h-2 fill-accent text-accent"></i> Acné</span>
+                        <span class="flex items-center gap-2 text-white/80 text-xs md:text-sm"><i data-lucide="circle" class="w-2 h-2 fill-accent text-accent"></i> Melasma</span>
+                        <span class="flex items-center gap-2 text-white/80 text-xs md:text-sm"><i data-lucide="circle" class="w-2 h-2 fill-accent text-accent"></i> Psoriasis</span>
+                        <span class="flex items-center gap-2 text-white/80 text-xs md:text-sm"><i data-lucide="circle" class="w-2 h-2 fill-accent text-accent"></i> Alopecia</span>
+                        <span class="flex items-center gap-2 text-white/80 text-xs md:text-sm"><i data-lucide="circle" class="w-2 h-2 fill-accent text-accent"></i> Rosácea</span>
+                        <span class="flex items-center gap-2 text-white/80 text-xs md:text-sm"><i data-lucide="circle" class="w-2 h-2 fill-accent text-accent"></i> Lunares</span>
+                    </div>
+                    <a href="https://wa.me/50768608060" class="inline-flex items-center gap-2 text-white text-sm font-semibold border-b border-white/30 pb-1 hover:border-accent transition-colors">
+                        Ver detalles clínicos <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 2. Dermatología Quirúrgica (Vertical Derecha) -->
+            <div class="md:col-span-4 group relative overflow-hidden rounded-[40px] shadow-lg reveal">
+                <img src="assets/img/derma_quirurgica.png" alt="Dermatología Quirúrgica" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-[#5A4B5E]/50 group-hover:bg-[#5A4B5E]/30 transition-colors duration-500"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8">
+                    <h3 class="text-xl md:text-2xl font-display text-white mb-2">Quirúrgica</h3>
+                    <p class="text-white/80 text-xs mb-4 line-clamp-2">Cirugía de quistes, biopsias de piel y retiro de lunares benignos.</p>
+                    <div class="bg-white/10 backdrop-blur-md rounded-full px-4 py-2 inline-block">
+                        <i data-lucide="scissors" class="w-4 h-4 text-white"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Dermatología Pediátrica -->
+            <div class="md:col-span-4 group relative overflow-hidden rounded-[40px] shadow-lg reveal">
+                <img src="assets/img/derma_pediatrica.png" alt="Dermatología Pediátrica" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-white/20 hover:bg-transparent transition-colors duration-500"></div>
+                <div class="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-white to-transparent">
+                    <h3 class="text-xl font-display text-primary mb-1">Dermatología <br> Pediátrica</h3>
+                    <p class="text-slate-600 text-[10px] font-bold uppercase tracking-widest">Cuidado Especializado</p>
+                </div>
+            </div>
+
+            <!-- 4. Dermatología Cosmética -->
+            <div class="md:col-span-7 group relative overflow-hidden rounded-[40px] shadow-lg bg-slate-50 reveal">
+                <div class="flex flex-col h-full md:flex-row">
+                    <div class="w-full md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
+                        <h3 class="text-2xl font-display text-primary mb-3">Estética & <br> Rejuvenecimiento</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                            Tratamientos avanzados como Toxina Botulínica, Rellenos y Plasma Rico en Plaquetas.
+                        </p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-center gap-2 text-xs text-slate-700"><i data-lucide="sparkles" class="w-3 h-3 text-accent"></i> Ácido Hialurónico</li>
+                            <li class="flex items-center gap-2 text-xs text-slate-700"><i data-lucide="sparkles" class="w-3 h-3 text-accent"></i> Peelings Químicos</li>
+                        </ul>
+                    </div>
+                    <div class="w-full md:w-1/2 h-full min-h-[200px]">
+                        <img src="assets/img/cosmetica_facial.png" alt="Cosmética Facial" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Cosmetología -->
+            <div class="md:col-span-5 group relative overflow-hidden rounded-[40px] shadow-lg reveal">
+                <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80" alt="Cosmetología" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-secondary/20 bg-blend-overlay"></div>
+                <div class="absolute bottom-0 right-0 p-8 text-right bg-gradient-to-l from-black/60 to-transparent w-full">
+                    <h3 class="text-2xl font-display text-white mb-1">Cosmetología</h3>
+                    <p class="text-white/70 text-xs">HydraBeauty & Limpiezas Faciales</p>
+                </div>
+            </div>
+
+            <!-- 6. Inmunología Clínica (Fondo Especial) -->
+            <div class="md:col-span-12 group bg-primary relative overflow-hidden rounded-[40px] shadow-lg reveal">
+                <div class="flex flex-col h-full md:flex-row items-center">
+                    <div class="w-full md:w-2/3 p-10 md:p-16 relative z-10">
+                        <h3 class="text-3xl font-display text-white mb-6">Inmunología Clínica & Alergias</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-white/80 text-sm">
+                            <span class="flex items-center gap-3"><i data-lucide="shield-check" class="w-5 h-5 text-accent"></i> Trastornos Inmunológicos</span>
+                            <span class="flex items-center gap-3"><i data-lucide="shield-check" class="w-5 h-5 text-accent"></i> Urticaria & Angioedema</span>
+                            <span class="flex items-center gap-3"><i data-lucide="shield-check" class="w-5 h-5 text-accent"></i> Alergias Ambientales</span>
+                            <span class="flex items-center gap-3"><i data-lucide="shield-check" class="w-5 h-5 text-accent"></i> Alergias Alimentarias</span>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-3/5 h-full opacity-30 md:opacity-50">
+                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&q=80" alt="Inmunología Clínica" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION AREA -->
+    <section class="py-20 bg-bg-base overflow-hidden">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <h2 class="text-3xl md:text-5xl font-display text-primary mb-8">¿Quieres agendar tu primera consulta o tienes alguna pregunta adicional?</h2>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="https://wa.me/50768608060" class="bg-accent text-white px-10 py-4 rounded-full font-semibold shadow-multi hover:-translate-y-1 transition-all">
+                    Agendar por WhatsApp
+                </a>
+                <a href="contacto.html" class="bg-white text-primary border border-slate-200 px-10 py-4 rounded-full font-semibold hover:bg-slate-50 transition-all">
+                    Ver Ubicación y Teléfonos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-24 bg-bg-base relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-4xl text-primary font-display font-medium">Preguntas Frecuentes</h2>
+                <p class="text-slate-600 mt-4">Todo lo que necesitas saber antes de tu primera visita en Chorrera.</p>
+            </div>
+
+            <div class="space-y-4 reveal">
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 cursor-pointer faq-card" onclick="this.classList.toggle('active')">
+                    <div class="flex justify-between items-center bg-transparent">
+                        <h3 class="font-semibold text-lg text-primary select-none">¿A partir de qué edad pueden atender a mi hijo?</h3>
+                        <i data-lucide="plus" class="w-5 h-5 text-slate-400 plus-icon"></i>
+                    </div>
+                    <div class="faq-content h-0 overflow-hidden transition-all duration-300">
+                        <p class="text-slate-600 mt-4 leading-relaxed">
+                            Atendemos a niños de todas las edades, desde recién nacidos con condiciones genéticas o dermatológicas hasta adolescentes con problemas de acné, gracias a nuestra especialidad en Dermatología Pediátrica.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 cursor-pointer faq-card" onclick="this.classList.toggle('active')">
+                    <div class="flex justify-between items-center bg-transparent">
+                        <h3 class="font-semibold text-lg text-primary select-none">¿Se necesita referencia médica para agendar cita?</h3>
+                        <i data-lucide="plus" class="w-5 h-5 text-slate-400 plus-icon"></i>
+                    </div>
+                    <div class="faq-content h-0 overflow-hidden transition-all duration-300">
+                        <p class="text-slate-600 mt-4 leading-relaxed">
+                            No, no se necesita referencia médica previa de un doctor general. Puedes agendar directamente tu evaluación dermatológica con nosotros vía WhatsApp o teléfono.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 cursor-pointer faq-card" onclick="this.classList.toggle('active')">
+                    <div class="flex justify-between items-center bg-transparent">
+                        <h3 class="font-semibold text-lg text-primary select-none">¿Qué incluyen los tratamientos estéticos?</h3>
+                        <i data-lucide="plus" class="w-5 h-5 text-slate-400 plus-icon"></i>
+                    </div>
+                    <div class="faq-content h-0 overflow-hidden transition-all duration-300">
+                        <p class="text-slate-600 mt-4 leading-relaxed">
+                            Nuestros procedimientos (como HydraBeauty) están respaldados por tecnología médica. Un dermatólogo evaluará qué insumos o mascarillas se ajustan exactamente a tu tipo de piel sin irritarla. No usamos tratamientos genéricos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                .faq-card.active .faq-content { height: auto; opacity: 1; }
+                .faq-card.active .plus-icon { transform: rotate(45deg); }
+                .plus-icon { transition: transform 0.3s ease; }
+            </style>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0A1622] text-white pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center gap-2 mb-6 font-display font-semibold text-xl">
+                        <i data-lucide="cross" class="w-6 h-6 text-accent"></i> DermaMedic
+                    </div>
+                    <p class="text-slate-400 text-sm">Expertos cuidando tu piel en La Chorrera, Panamá Oeste.</p>
+                </div>
+                <div>
+                    <h4 class="font-display text-lg mb-6">Contáctanos</h4>
+                    <p class="text-sm text-slate-400 mb-2">Uniplaza, Costa Verde, Local B-17</p>
+                    <p class="text-sm text-slate-400 mb-2">T. 345-5528</p>
+                    <p class="text-sm text-slate-400">WA. (+507) 6860-8060</p>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-xs text-slate-500 text-center">
+                &copy; 2024 DermaMedic Panamá.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/50768608060" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg hover:-translate-y-1 transition-transform z-50 wa-float">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 60) {
+                navbar.style.top = '0';
+                navbar.style.width = '100%';
+                navbar.style.maxWidth = '100%';
+                navbar.style.borderRadius = '0 0 1.25rem 1.25rem';
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-xl');
+            } else {
+                navbar.style.top = '1rem';
+                navbar.style.width = '94%';
+                navbar.style.maxWidth = '80rem';
+                navbar.style.borderRadius = '9999px';
+                navbar.classList.add('shadow-xl');
+                navbar.classList.remove('shadow-md');
+            }
+        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('revealed'), i * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

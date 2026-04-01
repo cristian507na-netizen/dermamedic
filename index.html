@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Clínica Dermatológica en Chorrera | DermaMedic Panamá</title>
+    <meta name="description" content="Dermatólogos expertos en Chorrera. Tu piel sin acné, manchas o dolor. Agenda hoy sin largas listas de espera en Uniplaza Costa Verde. 345-5528">
+    <link rel="canonical" href="https://dermamedicpanama.com/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Clínica Dermatológica en Chorrera | DermaMedic Panamá">
+    <meta property="og:description" content="Expertos en Dermatología Clínica, Quirúrgica, Pediátrica y Estética en La Chorrera.">
+    <meta property="og:image" content="assets/img/hero_bg.png">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "DermaMedic Panamá",
+      "image": "assets/img/hero_bg.png",
+      "url": "https://dermamedicpanama.com/",
+      "telephone": "+5073455528",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Uniplaza, Costa Verde, Local B-17",
+        "addressLocality": "La Chorrera",
+        "addressRegion": "Panamá Oeste",
+        "addressCountry": "PA"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday"],
+          "opens": "09:00",
+          "closes": "13:00"
+        }
+      ],
+      "sameAs": ["https://www.instagram.com/dermamedicpa/"],
+      "priceRange": "$$",
+      "description": "Clínica dermatológica en Chorrera."
+    }
+    </script>
+
+    <!-- Preload Hero Image -->
+    <link rel="preload" as="image" href="assets/img/hero_bg.png">
+
+    <style>
+        :root {
+            --primary: #5A4B5E;
+            --secondary: #83807B;
+            --accent: #99849E;
+            --bg-base: #FDFCFD;
+            --text-dark: #2F2A31;
+            --text-muted: #6C6670;
+            --cta-color: #99849E;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-multi: rgba(14,63,126,0.04) 0px 0px 0px 1px, rgba(42,51,69,0.04) 0px 1px 1px -0.5px, rgba(42,51,70,0.04) 0px 3px 3px -1.5px, rgba(42,51,70,0.04) 0px 6px 6px -3px, rgba(14,63,126,0.04) 0px 12px 12px -6px, rgba(14,63,126,0.04) 0px 24px 24px -12px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: var(--bg-base);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, .font-display {
+            font-family: var(--font-display);
+        }
+
+        /* Utility Classes */
+        .shadow-multi { box-shadow: var(--shadow-multi); }
+        .text-primary { color: var(--primary); }
+        .bg-primary { background-color: var(--primary); }
+        .text-secondary { color: var(--secondary); }
+        .bg-secondary { background-color: var(--secondary); }
+        .bg-accent { background-color: var(--accent); }
+        .text-accent { color: var(--accent); }
+
+        /* Splash Screen */
+        #splash-screen {
+            position: fixed; inset: 0; z-index: 9999;
+            background: var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            flex-direction: column;
+        }
+        #mascot-logo { width: 160px; height: 160px; }
+        .splash-name {
+            font-family: var(--font-display); color: white;
+            font-size: 2.2rem; margin-top: 1rem; opacity: 0;
+            animation: splashNameIn 0.6s ease-out 1.2s forwards;
+        }
+        .splash-tagline {
+            color: rgba(255,255,255,0.7); font-size: 0.9rem;
+            letter-spacing: 0.15em; text-transform: uppercase; opacity: 0;
+            animation: splashNameIn 0.6s ease-out 1.5s forwards;
+            font-family: var(--font-body);
+        }
+
+        @keyframes mascotIn {
+            0% { opacity:0; transform: scale(0); }
+            60% { transform: scale(1.08); }
+            100% { opacity:1; transform: scale(1); }
+        }
+        @keyframes breathe {
+            0%,100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+            70% { box-shadow: 0 0 0 25px rgba(255, 255, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+        }
+        @keyframes splashNameIn {
+            from { opacity:0; transform: translateY(12px); }
+            to   { opacity:1; transform: translateY(0); }
+        }
+        .splash-exit {
+            animation: splashFadeOut 0.5s ease-in-out forwards !important;
+        }
+        @keyframes splashFadeOut {
+            0%   { opacity:1; transform: scale(1); }
+            100% { opacity:0; transform: scale(1.06); }
+        }
+
+        /* Animations */
+        @keyframes blurIn {
+            from { filter:blur(12px); opacity:0; transform:translateY(8px); }
+            to   { filter:blur(0); opacity:1; transform:translateY(0); }
+        }
+        .blur-in-1 { opacity:0; animation: blurIn 0.8s ease-out 0.2s forwards; }
+        .blur-in-2 { opacity:0; animation: blurIn 0.8s ease-out 0.4s forwards; }
+        .blur-in-3 { opacity:0; animation: blurIn 0.8s ease-out 0.6s forwards; }
+        .blur-in-4 { opacity:0; animation: blurIn 0.8s ease-out 0.8s forwards; }
+
+        .reveal { 
+            opacity:0; transform: translateY(20px) scale(0.97);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out; 
+        }
+        .revealed { opacity:1; transform: translateY(0) scale(1); }
+
+        /* Testimonials Scroll */
+        @keyframes scrollUp {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+        @keyframes scrollDown {
+            0% { transform: translateY(-50%); }
+            100% { transform: translateY(0); }
+        }
+        .scroll-col-up { animation: scrollUp 40s linear infinite; }
+        .scroll-col-down { animation: scrollDown 40s linear infinite; }
+        .scroll-col-up:hover, .scroll-col-down:hover { animation-play-state: paused; }
+
+        /* Custom Components */
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255,255,255,0.65);
+            border: 1px solid rgba(255,255,255,0.35);
+            transition: background 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+        }
+        .glass-nav.scrolled {
+            background: rgba(255,255,255,0.94);
+            border: 1px solid rgba(227,184,129,0.25);
+        }
+        
+        /* WhatsApp Pulse */
+        @keyframes pulse-wa {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .wa-float { animation: pulse-wa 2s infinite; }
+    </style>
+</head>
+<body>
+
+    <!-- Splash Screen Gate -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const splash = document.getElementById('splash-screen');
+            if (sessionStorage.getItem('splashPlayed')) {
+                splash.style.display = 'none';
+            } else {
+                setTimeout(() => {
+                    splash.classList.add('splash-exit');
+                    setTimeout(() => {
+                        splash.style.display = 'none';
+                        sessionStorage.setItem('splashPlayed', 'true');
+                    }, 500);
+                }, 2300);
+            }
+        });
+    </script>
+
+    <!-- SPLASH SCREEN -->
+    <div id="splash-screen">
+        <div class="flex flex-col items-center justify-center">
+            <div class="mascot-wrap" style="animation: mascotIn 0.8s cubic-bezier(0.34,1.56,0.64,1) both;">
+                <div class="logo-card bg-white px-8 py-5 rounded-[2rem] shadow-multi relative flex items-center justify-center after:content-[''] after:absolute after:inset-[-4px] after:rounded-[2.2rem] after:bg-white/20 after:-z-10" style="animation: glowPulse 2s infinite 1.2s;">
+                    <img src="assets/img/logo_transparent.png" alt="DermaMedic Logo" style="height:48px; width:auto; max-width: 250px; object-fit:contain; animation: breathe 3s ease-in-out 1s infinite; transform-origin:center;">
+                </div>
+            </div>
+            <p class="splash-name">DermaMedic Panamá</p>
+            <p class="splash-tagline">Tu piel, nuestra especialidad</p>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed z-50 h-[72px] glass-nav left-1/2 -translate-x-1/2 shadow-xl" style="top: 1rem; width: 94%; max-width: 80rem; border-radius: 9999px;">
+        <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+            <a href="index.html" class="flex items-center h-full py-1.5 transition-opacity hover:opacity-80">
+                <img src="assets/img/logo_transparent.png" alt="DermaMedic" class="h-full w-auto max-w-[200px] object-contain">
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-[15px] font-medium text-slate-700">
+                <a href="index.html" class="text-primary font-semibold">Inicio</a>
+                <a href="servicios.html" class="hover:text-primary transition-colors">Servicios</a>
+                <a href="nosotros.html" class="hover:text-primary transition-colors">Nosotros</a>
+                <a href="contacto.html" class="hover:text-primary transition-colors">Contacto</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:3455528" class="text-sm font-medium text-slate-600 hover:text-primary flex items-center gap-2 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                    345-5528
+                </a>
+                <a href="https://wa.me/50768608060?text=Hola,%20quisiera%20agendar%20una%20cita." target="_blank" class="bg-accent text-white px-5 py-2.5 rounded-full font-medium text-sm flex items-center gap-2 hover:opacity-90 transition-all shadow-multi hover:-translate-y-0.5">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    Agenda Hoy
+                </a>
+            </div>
+
+            <!-- Mobile CTA + Menu -->
+            <div class="md:hidden flex items-center gap-2">
+                <a href="https://wa.me/50768608060?text=Hola,%20quisiera%20agendar%20una%20cita." target="_blank" class="bg-accent text-white px-3.5 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5">
+                    <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                    Cita
+                </a>
+                <button class="text-primary p-2" aria-label="Menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white pt-[72px] px-6">
+        <div class="flex flex-col gap-6 py-8 text-xl font-display">
+            <a href="index.html" class="text-primary">Inicio</a>
+            <a href="servicios.html" class="text-slate-700">Servicios</a>
+            <a href="nosotros.html" class="text-slate-700">Nosotros</a>
+            <a href="contacto.html" class="text-slate-700">Contacto</a>
+            <hr class="border-slate-100 my-4">
+            <a href="https://wa.me/50768608060?text=Hola" class="bg-primary text-white text-center py-4 rounded-3xl text-lg flex items-center justify-center gap-2 shadow-multi">
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                Escríbenos al WhatsApp
+            </a>
+            <a href="tel:3455528" class="text-center font-body text-slate-500 text-base"> Llamar: 345-5528 </a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-[90vh] flex items-center pt-20">
+        <!-- Background Image -->
+        <img src="assets/img/hero_bg.png" alt="Clínica DermaMedic en Chorrera" class="absolute inset-0 w-full h-full object-cover z-0" style="object-position: center;">
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-[#5A4B5E]/90 md:from-[#5A4B5E]/85 via-[#5A4B5E]/60 to-[#5A4B5E]/5 z-10"></div>
+
+        <div class="w-full relative z-20 px-8 md:px-16 lg:px-24 py-24 md:max-w-3xl">
+            <div class="bg-transparent md:backdrop-blur-none p-6 md:p-0 rounded-3xl">
+                <p class="blur-in-1 text-white/90 uppercase tracking-widest text-xs font-bold mb-4 flex items-center gap-3">
+                    <span class="w-8 h-px bg-white/90"></span>
+                    La Chorrera, Panamá Oeste
+                </p>
+                <h1 class="blur-in-2 text-4xl md:text-6xl text-white leading-[1.1] mb-6 font-display font-medium text-shadow-sm">
+                    Una piel sana.<br>
+                    <span class="italic font-light opacity-90 text-white">Sin dolor ni esperas.</span>
+                </h1>
+                <p class="blur-in-3 text-lg md:text-xl text-white/80 mb-10 leading-relaxed font-light max-w-lg">
+                    Equipos modernos que reducen el tiempo en silla a la mitad, y especialistas en clínica, estética y cirugía listos para atenderte hoy.
+                </p>
+                
+                <div class="blur-in-4 flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/50768608060" class="bg-accent text-white px-8 py-4 rounded-full font-medium text-center flex items-center justify-center gap-2 hover:bg-opacity-90 transition-all shadow-multi group">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        Consulta por WhatsApp
+                        <i data-lucide="arrow-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="servicios.html" class="bg-white/10 md:bg-white/20 text-white border border-white/20 px-8 py-4 rounded-full font-medium text-center hover:bg-white/30 transition-all flex items-center justify-center backdrop-blur-md">
+                        Ver Tratamientos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="bg-primary text-white py-12 md:py-16 relative z-20 -mt-8 rounded-t-3xl sm:-mt-0 sm:rounded-none">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center divide-x-0 md:divide-x divide-white/20">
+            <div class="reveal">
+                <p class="font-display text-4xl md:text-5xl font-semibold mb-2 text-accent">3+</p>
+                <p class="text-xs md:text-sm uppercase tracking-wider opacity-80">Especialidades</p>
+            </div>
+            <div class="reveal delay-[100ms]">
+                <p class="font-display text-4xl md:text-5xl font-semibold mb-2">100%</p>
+                <p class="text-xs md:text-sm uppercase tracking-wider opacity-80">Médicos Idóneos</p>
+            </div>
+            <div class="reveal delay-[200ms]">
+                <p class="font-display text-4xl md:text-5xl font-semibold mb-2 text-accent">0</p>
+                <p class="text-xs md:text-sm uppercase tracking-wider opacity-80">Listas de Espera</p>
+            </div>
+            <div class="reveal delay-[300ms]">
+                <p class="font-display text-4xl md:text-5xl font-semibold mb-2">Pty</p>
+                <p class="text-xs md:text-sm uppercase tracking-wider opacity-80">Uniplaza Chorrera</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES PREVIEW -->
+    <section class="py-24 bg-bg-base">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-sm font-bold text-secondary tracking-widest uppercase mb-2 block">Nuestros Servicios</span>
+                <h2 class="text-3xl md:text-4xl text-primary font-display font-medium mb-4">Soluciones específicas para cada etapa de tu piel.</h2>
+                <p class="text-slate-600">Desde acné adolescente hasta rejuvenecimiento facial y cirugía especializada. Todo en un solo lugar.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Service 1 -->
+                <a href="servicios.html" class="reveal bg-white rounded-3xl p-8 shadow-multi group hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full -z-0 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mb-6 relative z-10">
+                        <i data-lucide="stethoscope" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-primary mb-3 relative z-10">Dermatología Clínica</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed relative z-10">Manejo efectivo de acné, dermatitis, rosácea, alopecia y alergias con diagnósticos precisos desde la primera consulta.</p>
+                    <div class="flex items-center text-accent font-medium text-sm group-hover:text-primary transition-colors relative z-10">
+                        Ver detalles <i data-lucide="arrow-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- Service 2 -->
+                <a href="servicios.html" class="reveal delay-[100ms] bg-white rounded-3xl p-8 shadow-multi group hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full -z-0 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-accent/10 text-accent rounded-full flex items-center justify-center mb-6 relative z-10">
+                        <i data-lucide="scissors" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-primary mb-3 relative z-10">Dermatología Quirúrgica</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed relative z-10">Procedimientos seguros para remoción de lunares, verrugas, quistes, corrección de lóbulos y manejo de cáncer de piel.</p>
+                    <div class="flex items-center text-accent font-medium text-sm group-hover:text-primary transition-colors relative z-10">
+                        Ver detalles <i data-lucide="arrow-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+
+                <!-- Service 3 -->
+                <a href="servicios.html" class="reveal delay-[200ms] bg-white rounded-3xl p-8 shadow-multi group hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-0 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-6 relative z-10">
+                        <i data-lucide="sparkles" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-primary mb-3 relative z-10">Estética y Cosmetología</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed relative z-10">HydraBeauty, peelings, rejuvenecimiento y limpieza facial profunda realizados bajo supervisión médica.</p>
+                    <div class="flex items-center text-accent font-medium text-sm group-hover:text-primary transition-colors relative z-10">
+                        Ver detalles <i data-lucide="arrow-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+                
+                <!-- Service 4 -->
+                <a href="servicios.html" class="reveal bg-white rounded-3xl p-8 shadow-multi group hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full -z-0 transition-transform group-hover:scale-110"></div>
+                    <div class="w-14 h-14 bg-secondary/10 text-secondary rounded-full flex items-center justify-center mb-6 relative z-10">
+                        <i data-lucide="baby" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-display font-semibold text-primary mb-3 relative z-10">Dermatología Pediátrica</h3>
+                    <p class="text-slate-600 mb-6 text-sm leading-relaxed relative z-10">Atención especializada para los más pequeños. Tratamos dermatitis atópica, infecciones y hemangiomas con empatía.</p>
+                    <div class="flex items-center text-accent font-medium text-sm group-hover:text-primary transition-colors relative z-10">
+                        Ver detalles <i data-lucide="arrow-right" class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="mt-12 text-center reveal">
+                <a href="servicios.html" class="inline-flex items-center justify-center bg-white border border-slate-200 text-primary px-8 py-3.5 rounded-full font-medium hover:bg-slate-50 transition-colors shadow-sm">
+                    Ver todos los servicios
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT TEASER -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-white rounded-[40px] shadow-multi overflow-hidden flex flex-col md:flex-row items-center relative">
+                <div class="w-full md:w-1/2 p-10 md:p-16 relative z-10">
+                    <span class="text-sm font-bold text-accent tracking-widest uppercase mb-4 block reveal">El Equipo</span>
+                    <h2 class="text-3xl md:text-4xl text-primary font-display font-medium mb-6 reveal">No solo cuidamos tu piel, cuidamos de ti.</h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed reveal">
+                        Comprendemos tus preocupaciones y nos esforzamos por crear un ambiente en el que te sientas cómodo, escuchado y seguro. La excelencia médica de la ciudad, ahora más cerca de ti en Panamá Oeste.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 reveal">
+                        <a href="nosotros.html" class="bg-primary text-white px-6 py-3 rounded-full font-medium text-center hover:bg-opacity-90 transition-all flex items-center justify-center">
+                            Conocer a los especialistas
+                        </a>
+                    </div>
+                </div>
+                <!-- Image side -->
+                <div class="w-full md:w-1/2 h-80 md:h-auto md:absolute md:right-0 md:top-0 md:bottom-0 relative z-0">
+                    <img src="assets/img/equipo_actual.jpg" alt="Equipo médico DermaMedic" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-24 bg-primary text-white overflow-hidden relative">
+        <!-- Abstract Decoration -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+            <svg width="100%" height="100%">
+                <pattern id="pattern-circles" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+                </pattern>
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"></rect>
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <span class="text-sm font-bold text-accent tracking-widest uppercase mb-2 block">Casos Reales</span>
+                <h2 class="text-3xl md:text-4xl font-display font-medium mb-4">Lo que nuestros pacientes en Panamá Oeste logran.</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 reveal border border-white/20">
+                    <div class="flex gap-1 text-accent mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="font-display text-lg italic mb-6 leading-relaxed">"Desde que comencé a atenderme en DermaMedic he visto cambios muy notables en mi piel, ¡y para bien! Confío plenamente en su equipo y la recomiendo muchísimo."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center font-display font-bold text-xl">L</div>
+                        <div>
+                            <p class="font-semibold text-sm">Lourdes M.</p>
+                            <p class="text-xs text-white/60">Tratamiento para Acné</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 reveal delay-[100ms] border border-white/20">
+                    <div class="flex gap-1 text-accent mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="font-display text-lg italic mb-6 leading-relaxed">"Se me dificultó encontrar un dermatólogo para mi hija aquí en Panamá. Con DermaMedic mi nena tiene su carita súper bien atendida sin ir hasta la ciudad. ¡Gracias!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center font-display font-bold text-xl">C</div>
+                        <div>
+                            <p class="font-semibold text-sm">Carmen V.</p>
+                            <p class="text-xs text-white/60">Dermatología Pediátrica</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white/10 backdrop-blur-md rounded-3xl p-8 reveal delay-[200ms] border border-white/20">
+                    <div class="flex gap-1 text-accent mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="font-display text-lg italic mb-6 leading-relaxed">"He encontrado en DermaMedic más que una clínica, una familia que se preocupa por la salud de mi piel. El lugar es muy acogedor. ¡Altamente recomendado!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center font-display font-bold text-xl">R</div>
+                        <div>
+                            <p class="font-semibold text-sm">Roberto S.</p>
+                            <p class="text-xs text-white/60">Paciente Regular</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP & CONTACT CTA -->
+    <section class="py-24 bg-bg-base">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-white rounded-[40px] shadow-multi p-6 md:p-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <span class="text-sm font-bold text-secondary tracking-widest uppercase mb-4 block">Contáctanos</span>
+                        <h2 class="text-3xl md:text-5xl text-primary font-display font-medium mb-6">Agenda tu valoración. <span class="italic font-light">Hoy mismo.</span></h2>
+                        <p class="text-slate-600 mb-8 max-w-md">
+                            No dejes para mañana la salud de tu piel. Escríbenos por WhatsApp y nuestro equipo te responderá para encontrar el mejor horario para ti.
+                        </p>
+                        
+                        <div class="flex flex-col gap-6 mb-8">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-primary shrink-0 mt-1">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-primary">Dónde estamos</h4>
+                                    <p class="text-slate-600 text-sm mt-1">Uniplaza, Costa Verde, Local B-17<br>La Chorrera, Panamá Oeste</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-primary shrink-0 mt-1">
+                                    <i data-lucide="clock" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-primary">Horario de Atención</h4>
+                                    <p class="text-slate-600 text-sm mt-1">Lunes a Viernes: 9:00am - 6:00pm<br>Sábados: 9:00am - 1:00pm</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://wa.me/50768608060" class="bg-[#25D366] text-white px-8 py-4 rounded-full font-medium flex items-center gap-2 hover:opacity-90 transition-opacity shadow-[0_4px_14px_0_rgba(37,211,102,0.39)]">
+                                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                WhatsApp al 6860-8060
+                            </a>
+                            <a href="tel:3455528" class="bg-slate-100 text-slate-700 font-medium px-8 py-4 rounded-full flex items-center gap-2 hover:bg-slate-200 transition-colors">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                                Llama al 345-5528
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="relative h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-multi border border-slate-100 reveal delay-[200ms]">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15750.312151662922!2d-79.771286!3d8.905625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca00021b3a4a1%3A0x6b72f10b78c95029!2sUniplaza%20Costa%20Verde!5e0!3m2!1sen!2spa!4v1700000000000!5m2!1sen!2spa" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#0A1622] text-white relative pt-20 pb-10 overflow-hidden">
+        <!-- Giant Watermark -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.02] select-none overflow-hidden">
+            <span class="font-display font-bold text-[18vw] leading-none whitespace-nowrap">DERMAMEDIC</span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+                <!-- Brand -->
+                <div class="lg:pr-8">
+                    <div class="flex items-center gap-2 mb-6 text-xl font-display font-semibold">
+                        <i data-lucide="cross" class="w-6 h-6 text-accent"></i>
+                        DermaMedic
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                        Clínica dermatológica en Chorrera experta en dermatología clínica, pediátrica, quirúrgica y cosmética.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/dermamedicpa/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="font-display text-lg font-medium mb-6">Tratamientos</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="servicios.html" class="hover:text-white transition-colors">Dermatología Clínica</a></li>
+                        <li><a href="servicios.html" class="hover:text-white transition-colors">Dermatología Quirúrgica</a></li>
+                        <li><a href="servicios.html" class="hover:text-white transition-colors">Dermatología Pediátrica</a></li>
+                        <li><a href="servicios.html" class="hover:text-white transition-colors">Estética y Cosmetología</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="font-display text-lg font-medium mb-6">La Clínica</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li><a href="nosotros.html" class="hover:text-white transition-colors">Nuestro Equipo</a></li>
+                        <li><a href="servicios.html" class="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
+                        <li><a href="contacto.html" class="hover:text-white transition-colors">Contactar</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-display text-lg font-medium mb-6">Contacto</h4>
+                    <ul class="space-y-4 text-sm text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-4 h-4 mt-0.5 text-accent"></i>
+                            Uniplaza, Costa Verde, Local B-17<br>La Chorrera, Panamá
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
+                            345-5528
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="message-circle" class="w-4 h-4 text-accent"></i>
+                            (+507) 6860-8060
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; 2024 DermaMedic Panamá. Todos los derechos reservados.</p>
+                <p>Diseño enfocado en la salud de tu piel.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/50768608060" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg z-50 hover:-translate-y-1 transition-transform wa-float" aria-label="Escríbenos por WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Morphing Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 60) {
+                navbar.style.top = '0';
+                navbar.style.width = '100%';
+                navbar.style.maxWidth = '100%';
+                navbar.style.borderRadius = '0 0 1.25rem 1.25rem';
+                navbar.classList.add('shadow-md', 'scrolled');
+                navbar.classList.remove('shadow-xl');
+            } else {
+                navbar.style.top = '1rem';
+                navbar.style.width = '94%';
+                navbar.style.maxWidth = '80rem';
+                navbar.style.borderRadius = '9999px';
+                navbar.classList.add('shadow-xl');
+                navbar.classList.remove('shadow-md', 'scrolled');
+            }
+        });
+
+        // Intersection Observer for Scroll Reveals
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('revealed');
+                    }, i * 50); // Small stagger
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

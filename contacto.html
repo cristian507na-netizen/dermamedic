@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Agenda tu Cita | DermaMedic Panamá</title>
+    <meta name="description" content="Contáctanos para agendar tu consulta dermatológica en La Chorrera. Llámanos al 345-5528 o escríbenos por WhatsApp. Uniplaza Costa Verde.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #5A4B5E;
+            --secondary: #83807B;
+            --accent: #99849E;
+            --bg-base: #FDFCFD;
+        }
+        body { font-family: 'DM Sans', sans-serif; background: var(--bg-base); color: #0F172A; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        
+        .shadow-multi { box-shadow: rgba(14,63,126,0.04) 0px 0px 0px 1px, rgba(42,51,69,0.04) 0px 1px 1px -0.5px, rgba(42,51,70,0.04) 0px 3px 3px -1.5px, rgba(42,51,70,0.04) 0px 6px 6px -3px, rgba(14,63,126,0.04) 0px 12px 12px -6px, rgba(14,63,126,0.04) 0px 24px 24px -12px; }
+        
+        .glass-nav {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(255,255,255,0.95);
+            border: 1px solid rgba(227,184,129,0.25);
+            transition: all 0.3s ease;
+        }
+
+        .reveal { opacity:0; transform: translateY(20px); transition: opacity 0.7s ease-out; }
+        .revealed { opacity:1; transform: translateY(0); }
+        
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed z-50 h-[72px] glass-nav flex items-center left-1/2 -translate-x-1/2 shadow-xl" style="top: 1rem; width: 94%; max-width: 80rem; border-radius: 9999px;">
+        <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center">
+            <a href="index.html" class="flex items-center h-full py-1.5 transition-opacity hover:opacity-80">
+                <img src="assets/img/logo_transparent.png" alt="DermaMedic" class="h-full w-auto max-w-[200px] object-contain">
+            </a>
+            <div class="hidden md:flex gap-6 font-medium text-sm text-slate-600">
+                <a href="index.html" class="hover:text-[#5A4B5E]">Inicio</a>
+                <a href="servicios.html" class="hover:text-[#5A4B5E]">Servicios</a>
+                <a href="nosotros.html" class="hover:text-[#5A4B5E]">Nosotros</a>
+                <a href="contacto.html" class="text-[#5A4B5E] font-semibold">Contacto</a>
+            </div>
+            <button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-6 h-6 text-[#5A4B5E]"></i>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden absolute top-[72px] left-0 w-full z-40 bg-white px-6 shadow-md border-b">
+        <div class="flex flex-col gap-4 py-6 text-lg font-display">
+            <a href="index.html">Inicio</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html" class="text-[#5A4B5E]">Contacto</a>
+        </div>
+    </div>
+
+    <!-- CONTACT CONTAINER -->
+    <main class="flex-grow pt-28 pb-24 relative">
+        <div class="absolute inset-0 bg-[#5A4B5E] h-64 z-0"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center text-white mb-12 reveal">
+                <h1 class="text-4xl md:text-5xl font-display font-medium mb-4">Estamos aquí para ti</h1>
+                <p class="text-white/80">Reserva tu consulta. No esperes a que tu afección empeore.</p>
+            </div>
+
+            <div class="bg-white rounded-[40px] shadow-multi overflow-hidden flex flex-col lg:flex-row min-h-[600px] reveal">
+                <!-- Data Sidebar -->
+                <div class="w-full lg:w-5/12 bg-slate-50 p-10 lg:p-14 border-r border-slate-100 flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-2xl font-display text-[#5A4B5E] mb-8">Información Rápida</h2>
+                        
+                        <div class="space-y-8">
+                            <div class="flex gap-4">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-[#99849E] shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800">Dirección</h4>
+                                    <p class="text-slate-600 mt-1 leading-relaxed">Uniplaza, Costa Verde<br>Local B-17. La Chorrera,<br>Panamá Oeste</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-4">
+                                <i data-lucide="clock" class="w-6 h-6 text-[#99849E] shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800">Horarios</h4>
+                                    <p class="text-slate-600 mt-1 leading-relaxed">Lun a Vie: 9:00am - 6:00pm<br>Sábado: 9:00am - 1:00pm<br>Domingo: Cerrado</p>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-4">
+                                <i data-lucide="phone" class="w-6 h-6 text-[#99849E] shrink-0 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold text-slate-800">Teléfonos</h4>
+                                    <p class="text-slate-600 mt-1 leading-relaxed">Clínica: <a href="tel:3455528" class="text-[#83807B] font-medium">345-5528</a><br>
+                                    WhatsApp: <a href="https://wa.me/50768608060" class="text-[#25D366] font-medium">6860-8060</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 bg-[#25D366]/10 rounded-2xl p-6 border border-[#25D366]/20">
+                        <p class="text-sm text-slate-700 font-medium mb-4">¿Tienes una urgencia dermatológica?</p>
+                        <a href="https://wa.me/50768608060" class="w-full bg-[#25D366] text-white px-6 py-3 rounded-full flex items-center gap-2 justify-center shadow-sm hover:translate-y-[-2px] transition-transform">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i> Chat Directo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Frame -->
+                <div class="w-full lg:w-7/12 p-2">
+                    <div class="w-full h-full min-h-[400px] rounded-[32px] overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15750.312151662922!2d-79.771286!3d8.905625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca00021b3a4a1%3A0x6b72f10b78c95029!2sUniplaza%20Costa%20Verde!5e0!3m2!1sen!2spa!4v1700000000000!5m2!1sen!2spa" 
+                            width="100%" height="100%" style="border:0;" loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#0A1622] text-white pt-10 pb-10 text-center text-sm mt-auto">
+        <p class="text-slate-400">&copy; 2024 DermaMedic Panamá. La Chorrera, Uniplaza.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        lucide.createIcons();
+        document.querySelectorAll('.reveal').forEach(el => setTimeout(()=>el.classList.add('revealed'), 100));
+        
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (!navbar) return;
+            if (window.scrollY > 60) {
+                navbar.style.top = '0';
+                navbar.style.width = '100%';
+                navbar.style.maxWidth = '100%';
+                navbar.style.borderRadius = '0 0 1.25rem 1.25rem';
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-xl');
+            } else {
+                navbar.style.top = '1rem';
+                navbar.style.width = '94%';
+                navbar.style.maxWidth = '80rem';
+                navbar.style.borderRadius = '9999px';
+                navbar.classList.add('shadow-xl');
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>

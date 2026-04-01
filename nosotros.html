@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Especialistas en Dermatología en Panamá Oeste</title>
+    <meta name="description" content="Conoce nuestro propósito. Brindamos atención médica y estética de excelencia en La Chorrera con tecnología avanzada y especialistas idóneos.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #635F6A;
+            --secondary: #90A98F;
+            --accent: #E0916D;
+            --bg-base: #F8FAFC;
+            --text-dark: #0F172A;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --shadow-multi: rgba(14,63,126,0.04) 0px 0px 0px 1px, rgba(42,51,69,0.04) 0px 1px 1px -0.5px, rgba(42,51,70,0.04) 0px 3px 3px -1.5px, rgba(42,51,70,0.04) 0px 6px 6px -3px, rgba(14,63,126,0.04) 0px 12px 12px -6px, rgba(14,63,126,0.04) 0px 24px 24px -12px;
+        }
+
+        body { font-family: var(--font-body); color: var(--text-dark); background-color: var(--bg-base); }
+        h1, h2, h3, .font-display { font-family: var(--font-display); }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255,255,255,0.65);
+            border: 1px solid rgba(255,255,255,0.35);
+            transition: background 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+        }
+        .glass-nav.scrolled {
+            background: rgba(255,255,255,0.94);
+            border: 1px solid rgba(227,184,129,0.25);
+        }
+        
+        @keyframes blurIn { from { filter:blur(12px); opacity:0; transform:translateY(8px); } to { filter:blur(0); opacity:1; transform:translateY(0); } }
+        .blur-in-1 { opacity:0; animation: blurIn 0.8s ease-out 0.2s forwards; }
+        .reveal { opacity:0; transform: translateY(20px); transition: opacity 0.7s ease-out, transform 0.7s ease-out; }
+        .revealed { opacity:1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed z-50 h-[72px] glass-nav left-1/2 -translate-x-1/2 shadow-xl" style="top: 1rem; width: 94%; max-width: 80rem; border-radius: 9999px;">
+        <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
+            <a href="index.html" class="flex items-center h-full py-1.5 transition-opacity hover:opacity-80">
+                <img src="assets/img/logo_transparent.png" alt="DermaMedic" class="h-full w-auto max-w-[200px] object-contain">
+            </a>
+            
+            <div class="hidden md:flex items-center gap-8 text-[15px] font-medium text-slate-700">
+                <a href="index.html" class="hover:text-[--primary]">Inicio</a>
+                <a href="servicios.html" class="hover:text-[--primary]">Servicios</a>
+                <a href="nosotros.html" class="text-[--primary] font-semibold">Nosotros</a>
+                <a href="contacto.html" class="hover:text-[--primary]">Contacto</a>
+            </div>
+
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:3455528" class="text-sm font-medium text-slate-600 hover:text-[--primary]">345-5528</a>
+                <a href="https://wa.me/50768608060" class="bg-[--accent] text-white px-5 py-2.5 rounded-full font-medium text-sm flex items-center gap-2">Agenda Hoy</a>
+            </div>
+            
+            <button class="md:hidden text-[--primary] p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white pt-[72px] px-6">
+        <div class="flex flex-col gap-6 py-8 text-xl font-display">
+            <a href="index.html" class="text-slate-700">Inicio</a>
+            <a href="servicios.html" class="text-slate-700">Servicios</a>
+            <a href="nosotros.html" class="text-[--primary]">Nosotros</a>
+            <a href="contacto.html" class="text-slate-700">Contacto</a>
+        </div>
+    </div>
+
+    <!-- HERO ABOUT - DESIGN REDESIGN -->
+    <section class="relative min-h-[85vh] flex items-center pt-24 overflow-hidden bg-slate-950">
+        <!-- Background Image with Depth -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/img/equipo_actual.jpg" alt="Equipo médico DermaMedic" class="w-full h-full object-cover object-[center_20%] opacity-60">
+            <!-- Sophisticated Dual Gradient Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full py-20">
+            <div class="max-w-2xl blur-in-1">
+                <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+                    <span class="w-2 h-2 rounded-full bg-[--accent] animate-pulse"></span>
+                    <span class="text-xs font-bold text-white/80 uppercase tracking-widest">Nuestro Propósito</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl text-white font-display font-medium leading-[1.1] mb-8">
+                    Nacimos para <br>
+                    <span class="text-[--accent] italic font-light">transformar la piel</span>.
+                </h1>
+                
+                <div class="relative pl-8 border-l-2 border-[--accent]/30">
+                    <p class="text-xl text-slate-300 leading-relaxed font-light max-w-xl">
+                        En DermaMedic Panamá, hemos creado un concepto donde la <span class="text-white font-medium">medicina de vanguardia</span> y el cuidado humano se encuentran. No solo tratamos afecciones; restauramos la confianza de nuestra comunidad en Panamá Oeste.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subtle Bottom Decor -->
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[--bg-base] to-transparent z-20"></div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+                <h2 class="text-3xl text-[--primary] font-display font-medium mb-4">¿Por qué elegirnos?</h2>
+                <p class="text-slate-600">Más que dermatología clínica; somos tu paso hacia un bienestar profundo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-[--bg-base] p-10 rounded-3xl reveal flex gap-6">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0">
+                        <i data-lucide="heart" class="w-6 h-6 text-[--accent]"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-display font-medium text-[--primary] mb-3">Atención empática</h3>
+                        <p class="text-slate-600">Entendemos cómo las condiciones de la piel afectan tu autoestima y tu vida díaria. Te guiamos sin juzgarte, diseñando tratamientos adaptados a tu realidad.</p>
+                    </div>
+                </div>
+
+                <div class="bg-[--bg-base] p-10 rounded-3xl reveal flex gap-6">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shrink-0">
+                        <i data-lucide="award" class="w-6 h-6 text-[--secondary]"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-display font-medium text-[--primary] mb-3">Expertos calificados</h3>
+                        <p class="text-slate-600">No dejamos tu salud al azar. Todo nuestro equipo clínico está conformado por especialistas con años de entrenamiento idóneo probados en dermatología médica.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-[--primary] rounded-3xl p-10 md:p-16 text-center text-white reveal shadow-[--shadow-multi]">
+                <h2 class="text-3xl font-display mb-6">¿Preparado para tu primera visita?</h2>
+                <p class="max-w-xl mx-auto text-slate-300 mb-8">Sabemos que encontrar el dermatólogo correcto es difícil. Danos la oportunidad de evaluar tu caso y te brindaremos un diagnóstico honesto y resolutivo.</p>
+                <a href="https://wa.me/50768608060" class="inline-flex bg-[--accent] text-white px-8 py-4 rounded-full font-medium hover:opacity-90">
+                    Conversar con el especialista
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SIMPLE -->
+    <footer class="bg-[#0A1622] text-white pt-10 pb-10 text-center text-sm">
+        <p class="text-slate-400">&copy; 2024 DermaMedic Panamá. La Chorrera, Uniplaza.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 60) {
+                navbar.style.top = '0';
+                navbar.style.width = '100%';
+                navbar.style.maxWidth = '100%';
+                navbar.style.borderRadius = '0 0 1.25rem 1.25rem';
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-xl');
+            } else {
+                navbar.style.top = '1rem';
+                navbar.style.width = '94%';
+                navbar.style.maxWidth = '80rem';
+                navbar.style.borderRadius = '9999px';
+                navbar.classList.add('shadow-xl');
+                navbar.classList.remove('shadow-md');
+            }
+        });
+        const observer = new IntersectionObserver(e => e.forEach(ent => {
+            if (ent.isIntersecting) { ent.target.classList.add('revealed'); observer.unobserve(ent.target); }
+        }), { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
